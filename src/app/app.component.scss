@@ -1,0 +1,250 @@
+// Import dei font da Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+$primary-color: #02023B; // Colore primario
+// Stili per l'header
+header {
+    font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+
+  .logo img {
+    height: 50px; // Altezza del logo
+  }
+
+  nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-left: 20px;
+
+      a {
+        text-decoration: none;
+        color: $primary-color;
+        font-weight: bold;
+        font-size: 25x;
+      }
+    }
+  }
+}
+
+// Stili per la sezione 1
+.sezione1 {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 50px;
+  text-align: center;
+  background: radial-gradient(circle, #AA00F9, #d072fc);
+
+  .cerchio {
+    border: 5px solid white;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background-color: #E7CDFC;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 100px 5px white;
+
+    img {
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+      
+    }
+  }
+  
+
+  .testo {
+    font-family: 'Knewave', cursive;
+    color: white;
+    font-size: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+// Stili per la sezione 2
+.sezione2 {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 50px;
+    
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    .titolo {
+        font-family: 'Knewave', cursive;
+    color: $primary-color;
+    font-size: 50px;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 100px;
+      padding-left: 10%;
+      padding-right: 10%;
+
+      .colonna {
+        flex: 1;
+
+        .icona {
+          text-align: center;
+
+          img {
+            width: 80px;
+            height: 80px;
+          }
+        }
+
+        .descrizione {
+          text-align: justify;
+        }
+
+        .pulsante {
+          border: 2px solid black;
+          border-radius: 10px;
+          padding: 10px;
+          cursor: pointer;
+          text-align: center;
+          margin-bottom: 20px;
+
+          .contenuto {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 10px 0px 10px;
+
+            img {
+              width: 30px;
+              height: 30px;
+              margin-right: 10px;
+            }
+
+            h3 {
+              margin: 0;
+              font-size: 18px;
+              font-weight: bold;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Stili per la sezione 3
+.sezione3 {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: radial-gradient(circle, #AA00F9, #d072fc);
+  text-align: center;
+
+  .titolo {
+    font-family: 'Knewave', cursive;
+    color: white;
+    font-size: 50px;
+      text-align: center;
+      margin-bottom: 50px;
+  }
+
+  .carousel {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+    .curriculum {
+      width: 200px;
+      
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+      }
+    }
+
+    .curriculumCenter {
+      scale: 1.1;
+    }
+  }
+
+  .pulsanti {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+
+    .pulsante {
+      border: 2px solid black;
+      border-radius: 10px;
+      padding: 10px;
+      background-color: white;
+      cursor: pointer;
+
+      .contenuto {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+        }
+
+        h3 {
+          margin: 0;
+          font-size: 18px;
+          font-weight: bold;
+          color: $primary-color;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      }
+    }
+  }
+}
+
+// Stili per il footer
+footer {
+    font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+
+  .colonna {
+    flex: 1;
+    text-align: center;
+
+    .persona {
+      margin-bottom: 20px;
+    }
+
+    .nome-cognome {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .descrizione {
+      font-style: italic;
+      margin: 0;
+    }
+  }
+}
