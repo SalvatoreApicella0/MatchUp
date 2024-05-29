@@ -82,23 +82,21 @@
     
     <h3 class="titolo">Start the process</h3>
     <div class="pulsanti">
-      <div class="pulsante">
-        <div class="contenuto">
-          <button (click)="openFileBrowser()">
+      <button class="pulsante" alt="Upload" (click)="openFileBrowser()">
+          <div class="contenuto">
             <img src="/assets/Icon_Upload.png" alt="Download">
             <h3 class="titolo">Upload</h3>
-          </button>
-          <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)">
-        </div>
-      </div>
-      <div class="pulsante">
+            <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)">
+          </div>
+      </button>
+      
+      <button class="pulsante" (click)="downloadFile()" [disabled]="!uploadedFile">
         <div class="contenuto">
-          <button (click)="downloadFile()">
-            <img src="/assets/Icon_Download.png" alt="Download">
-            <h3 class="titolo">Download</h3>
-          </button>
+          <img src="/assets/Icon_Download.png" alt="Download">
+          <h3 class="titolo">Download</h3>
         </div>
-      </div>
+      </button>        
+      
     </div>
   </section>  
 </main>

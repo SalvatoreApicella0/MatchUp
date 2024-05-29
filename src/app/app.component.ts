@@ -51,6 +51,12 @@ export class AppComponent {
     //nome del template scelto(tranne estensione), 
     //che o può essere usato come ID stesso, o convertito in ID per la post
 
+    let x = 0;
+    for (let i = 0; i < 10000000000; i++) {
+      x = 2 * 2;
+    }
+
+
     
   }
 
