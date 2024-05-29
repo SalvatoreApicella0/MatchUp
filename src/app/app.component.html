@@ -69,19 +69,16 @@
 
     <div class="carousel">
       <div class="carousel-images">
-        <img id="carousel-img-0" src="" alt="CV">
-        <img id="carousel-img-1" src="" alt="CV">
+        <img id="carousel-img-0" src="" alt="CV" (click)="scrollLeft()">
+        <img class="curriculumMid" id="carousel-img-1" src="" alt="CV" (click)="scrollLeft()">
         <img class="curriculumCenter" id="carousel-img-2" src="" alt="CV">
-        <img id="carousel-img-3" src="" alt="CV">
-        <img id="carousel-img-4" src="" alt="CV">
+        <img class="curriculumMid" id="carousel-img-3" src="" alt="CV" (click)="scrollRight()">
+        <img id="carousel-img-4" src="" alt="CV" (click)="scrollRight()">
       </div>
     </div>
     
-
     <button class="scrollCarousel" (click)="scrollLeft()">←</button>
     <button class="scrollCarousel" (click)="scrollRight()">→</button>
-    
-    
     
     <h3 class="titolo">Start the process</h3>
     <div class="pulsanti">
@@ -103,7 +100,6 @@
         </div>
       </div>
     </div>
-    
   </section>  
 </main>
 
@@ -112,13 +108,13 @@
   <div class="colonna">
     <div class="persona">
       <p class="nome-cognome">Gerardo Caravelli</p>
-      <p class="descrizione">Mangment Engineer</p>
+      <p class="descrizione">Management Engineer</p>
     </div> 
   </div>
   <div class="colonna">
     <div class="persona">
       <p class="nome-cognome">Pietro Setaro</p>
-      <p class="descrizione">Mangment Engineer</p>
+      <p class="descrizione">Management Engineer</p>
     </div> 
   </div>
   <div class="colonna">

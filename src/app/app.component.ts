@@ -95,14 +95,17 @@ export class AppComponent {
   }
 
   updateVisibleImages() {
-    const visibleImages = this.getVisibleImages();
-    for (let i = 0; i < visibleImages.length; i++) {
-      const imgElement = document.getElementById(`carousel-img-${i}`);
-      if (imgElement) {
-        imgElement.setAttribute('src', visibleImages[i]);
+    if (typeof document !== 'undefined') {
+      const visibleImages = this.getVisibleImages();
+      for (let i = 0; i < visibleImages.length; i++) {
+        const imgElement = document.getElementById(`carousel-img-${i}`);
+        if (imgElement) {
+          imgElement.setAttribute('src', visibleImages[i]);
+        }
       }
     }
   }
+  
 
   ngAfterViewInit() {
     this.updateVisibleImages();
