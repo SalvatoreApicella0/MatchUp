@@ -11,6 +11,7 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'matchup';
   uploadedFile: File | null = null;
+  loading = false;
 
   template_cv = [
     "/assets/CV_Template/CV_0.png",
@@ -37,10 +38,13 @@ export class AppComponent {
   
 
   openFileBrowser() {
+    this.loading = true;
+    this.uploadedFile = null;
     this.fileInput.nativeElement.click();
   }
 
   onFileSelected(event: any) {
+    
     const file: File = event.target.files[0];
     this.uploadedFile = event.target.files[0];
   
@@ -56,6 +60,7 @@ export class AppComponent {
       x = 2 * 2;
     }
 
+    this.loading = false;
 
     
   }
