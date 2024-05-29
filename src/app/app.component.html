@@ -65,21 +65,22 @@
   
   <section class="sezione3">
     <h2 class="titolo">Our Templates</h2>
+    <h3 class="subtitle">Select one of this</h3>
     <div class="carousel">
       <div class="curriculum">
-        <img src="/assets/CV_PlaceHolder.png" alt="CV">
+        <img src="/assets/CV_Template/CV_4.png" alt="CV">
       </div>
       <div class="curriculum">
-        <img src="/assets/CV_PlaceHolder.png" alt="CV">
+        <img src="/assets/CV_Template/CV_5.png" alt="CV">
       </div>
       <div class="curriculum curriculumCenter">
-        <img src="/assets/CV_PlaceHolder.png" alt="CV">
+        <img src="/assets/CV_Template/CV_6.png" alt="CV">
       </div>
       <div class="curriculum">
-        <img src="/assets/CV_PlaceHolder.png" alt="CV">
+        <img src="/assets/CV_Template/CV_7.png" alt="CV">
       </div>
       <div class="curriculum">
-        <img src="/assets/CV_PlaceHolder.png" alt="CV">
+        <img src="/assets/CV_Template/CV_8.png" alt="CV">
       </div> 
     </div>
     
@@ -87,14 +88,19 @@
     <div class="pulsanti">
       <div class="pulsante">
         <div class="contenuto">
-          <img src="/assets/Icon_Upload.png" alt="Download">
-          <h3 class="titolo">Upload</h3>
+          <button (click)="openFileBrowser()">
+            <img src="/assets/Icon_Upload.png" alt="Download">
+            <h3 class="titolo">Upload</h3>
+          </button>
+          <input type="file" #fileInput style="display: none" (change)="onFileSelected($event)">
         </div>
       </div>
       <div class="pulsante">
         <div class="contenuto">
-          <img src="/assets/Icon_Download.png" alt="Download">
-          <h3 class="titolo">Download</h3>
+          <button (click)="downloadFile()">
+            <img src="/assets/Icon_Download.png" alt="Download">
+            <h3 class="titolo">Download</h3>
+          </button>
         </div>
       </div>
     </div>
