@@ -12,6 +12,8 @@ export class AppComponent {
   title = 'matchup';
   uploadedFile: File | null = null;
 
+  templateScelto = 'null';
+
   @ViewChild('fileInput') fileInput: ElementRef;
 
   constructor(private elementRef: ElementRef) {
@@ -30,6 +32,10 @@ export class AppComponent {
     const formData = new FormData();
     formData.append('file', file);
     
+    //this.templateScelto questa è la variabile che ha all'interno il
+    //nome del template scelto(tranne estensione), 
+    //che o può essere usato come ID stesso, o convertito in ID per la post
+
     
   }
 
@@ -51,9 +57,36 @@ export class AppComponent {
     }
   }
 
+  template_cv = [
+    "/assets/CV_Template/CV_0.png",
+    "/assets/CV_Template/CV_1.png",
+    "/assets/CV_Template/CV_2.png",
+    "/assets/CV_Template/CV_3.png",
+    "/assets/CV_Template/CV_4.png",
+    "/assets/CV_Template/CV_5.png",
+    "/assets/CV_Template/CV_6.png",
+    "/assets/CV_Template/CV_7.png",
+    "/assets/CV_Template/CV_8.png",
+    "/assets/CV_Template/CV_9.png"
+    
+  ];
+  currentIndex_cv_carousel = 3; // L'indice dell'immagine centrale iniziale
+
+  scrollLeft() {
+    if (this.currentIndex_cv_carousel > 2) {
+      this.currentIndex_cv_carousel--;
+      this.templateScelto = this.template_cv[this.currentIndex_cv_carousel].slice(0, -4);
+    }
+  }
+
+  scrollRight() {
+    if (this.currentIndex_cv_carousel < this.template_cv.length - 3) {
+      this.currentIndex_cv_carousel++;
+      this.templateScelto = this.template_cv[this.currentIndex_cv_carousel].slice(0, -4);
+    }
+  }
+
 }
 
 
-
-  
 

@@ -1,0 +1,18 @@
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .curriculum {
+    flex: 0 0 auto;
+    margin: 0 10px; /* Spazio tra le immagini */
+  }
+  
+  button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  

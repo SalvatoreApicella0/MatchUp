@@ -66,23 +66,21 @@
   <section class="sezione3">
     <h2 class="titolo">Our Templates</h2>
     <h3 class="subtitle">Select one of this</h3>
+
     <div class="carousel">
-      <div class="curriculum">
-        <img src="/assets/CV_Template/CV_4.png" alt="CV">
-      </div>
-      <div class="curriculum">
-        <img src="/assets/CV_Template/CV_5.png" alt="CV">
-      </div>
-      <div class="curriculum curriculumCenter">
-        <img src="/assets/CV_Template/CV_6.png" alt="CV">
-      </div>
-      <div class="curriculum">
-        <img src="/assets/CV_Template/CV_7.png" alt="CV">
-      </div>
-      <div class="curriculum">
-        <img src="/assets/CV_Template/CV_8.png" alt="CV">
-      </div> 
+      
+      <img src="{{ template_cv[currentIndex_cv_carousel - 2] }}" alt="Previous Image" (click)="scrollLeft()">
+      <img src="{{ template_cv[currentIndex_cv_carousel - 1] }}" alt="Previous Image" (click)="scrollLeft()">
+      <img class="curriculumCenter" src="{{ template_cv[currentIndex_cv_carousel] }}" alt="Current Image">
+      <img src="{{ template_cv[currentIndex_cv_carousel + 1] }}" alt="Next Image" (click)="scrollRight()">
+      <img src="{{ template_cv[currentIndex_cv_carousel + 2] }}" alt="Next Image" (click)="scrollRight()">
+      
     </div>
+
+    <button class="scrollCarousel" (click)="scrollLeft()">←</button>
+    <button class="scrollCarousel" (click)="scrollRight()">→</button>
+    
+    
     
     <h3 class="titolo">Start the process</h3>
     <div class="pulsanti">
