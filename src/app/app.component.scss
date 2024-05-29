@@ -179,14 +179,16 @@ header {
 
 
     img {
-      width: 10%;
-      height: 10%;
+      width: 13%;
+      margin: 20px;
       object-fit: cover;
       border-radius: 30px;
     }
 
     .curriculumCenter {
-      scale: 1.2;
+      scale: 1.4;
+      margin-left: 50px;
+      margin-right: 50px;
     }
   }
   .scrollCarousel {

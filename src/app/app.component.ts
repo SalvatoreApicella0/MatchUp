@@ -75,17 +75,37 @@ export class AppComponent {
 
   
   scrollLeft() {
-    if (this.currentIndex_cv_carousel > 2) {
-      this.currentIndex_cv_carousel--;
-      this.templateScelto = this.template_cv[this.currentIndex_cv_carousel].slice(0, -4);
-    }
+    this.currentIndex_cv_carousel = (this.currentIndex_cv_carousel - 1 + this.template_cv.length) % this.template_cv.length;
+    this.templateScelto = this.template_cv[this.currentIndex_cv_carousel].slice(0, -4);
+    this.updateVisibleImages();
   }
 
   scrollRight() {
-    if (this.currentIndex_cv_carousel < this.template_cv.length - 3) {
-      this.currentIndex_cv_carousel++;
-      this.templateScelto = this.template_cv[this.currentIndex_cv_carousel].slice(8, -4);
+    this.currentIndex_cv_carousel = (this.currentIndex_cv_carousel + 1) % this.template_cv.length;
+    this.templateScelto = this.template_cv[this.currentIndex_cv_carousel].slice(8, -4);
+    this.updateVisibleImages();
+  }
+
+  getVisibleImages() {
+    const visibleImages = [];
+    for (let i = -2; i <= 2; i++) {
+      visibleImages.push(this.template_cv[(this.currentIndex_cv_carousel + i + this.template_cv.length) % this.template_cv.length]);
     }
+    return visibleImages;
+  }
+
+  updateVisibleImages() {
+    const visibleImages = this.getVisibleImages();
+    for (let i = 0; i < visibleImages.length; i++) {
+      const imgElement = document.getElementById(`carousel-img-${i}`);
+      if (imgElement) {
+        imgElement.setAttribute('src', visibleImages[i]);
+      }
+    }
+  }
+
+  ngAfterViewInit() {
+    this.updateVisibleImages();
   }
 
 }

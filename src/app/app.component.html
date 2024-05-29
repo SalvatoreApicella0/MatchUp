@@ -68,14 +68,15 @@
     <h3 class="subtitle">Select one of this</h3>
 
     <div class="carousel">
-      
-      <img src="{{ template_cv[currentIndex_cv_carousel - 2] }}" alt="Previous Image" (click)="scrollLeft()">
-      <img src="{{ template_cv[currentIndex_cv_carousel - 1] }}" alt="Previous Image" (click)="scrollLeft()">
-      <img class="curriculumCenter" src="{{ template_cv[currentIndex_cv_carousel] }}" alt="Current Image">
-      <img src="{{ template_cv[currentIndex_cv_carousel + 1] }}" alt="Next Image" (click)="scrollRight()">
-      <img src="{{ template_cv[currentIndex_cv_carousel + 2] }}" alt="Next Image" (click)="scrollRight()">
-      
+      <div class="carousel-images">
+        <img id="carousel-img-0" src="" alt="CV">
+        <img id="carousel-img-1" src="" alt="CV">
+        <img class="curriculumCenter" id="carousel-img-2" src="" alt="CV">
+        <img id="carousel-img-3" src="" alt="CV">
+        <img id="carousel-img-4" src="" alt="CV">
+      </div>
     </div>
+    
 
     <button class="scrollCarousel" (click)="scrollLeft()">←</button>
     <button class="scrollCarousel" (click)="scrollRight()">→</button>
