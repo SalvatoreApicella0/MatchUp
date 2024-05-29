@@ -43,19 +43,20 @@ export class AppComponent {
     if (this.uploadedFile) {
       const blob = new Blob([this.uploadedFile], { type: this.uploadedFile.type });
       const url = window.URL.createObjectURL(blob);
-      
+  
       // Creare un link temporaneo e simularne il clic per avviare il download
       const link = document.createElement('a');
       link.href = url;
-      link.download = this.uploadedFile.name;
+      link.download = this.templateScelto + ".png"; // Utilizza il nuovo nome del file
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-
+  
       // Rilascia l'URL creato per evitare memory leaks
       window.URL.revokeObjectURL(url);
     }
   }
+  
 
   template_cv = [
     "/assets/CV_Template/CV_0.png",
