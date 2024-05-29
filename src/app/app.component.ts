@@ -12,7 +12,22 @@ export class AppComponent {
   title = 'matchup';
   uploadedFile: File | null = null;
 
-  templateScelto = 'null';
+  template_cv = [
+    "/assets/CV_Template/CV_0.png",
+    "/assets/CV_Template/CV_1.png",
+    "/assets/CV_Template/CV_2.png",
+    "/assets/CV_Template/CV_3.png",
+    "/assets/CV_Template/CV_4.png",
+    "/assets/CV_Template/CV_5.png",
+    "/assets/CV_Template/CV_6.png",
+    "/assets/CV_Template/CV_7.png",
+    "/assets/CV_Template/CV_8.png",
+    "/assets/CV_Template/CV_9.png"
+  ];
+  currentIndex_cv_carousel = 3; // L'indice dell'immagine centrale iniziale
+
+
+  templateScelto = this.template_cv[this.currentIndex_cv_carousel].slice(8, -4);
 
   @ViewChild('fileInput') fileInput: ElementRef;
 
@@ -58,21 +73,7 @@ export class AppComponent {
   }
   
 
-  template_cv = [
-    "/assets/CV_Template/CV_0.png",
-    "/assets/CV_Template/CV_1.png",
-    "/assets/CV_Template/CV_2.png",
-    "/assets/CV_Template/CV_3.png",
-    "/assets/CV_Template/CV_4.png",
-    "/assets/CV_Template/CV_5.png",
-    "/assets/CV_Template/CV_6.png",
-    "/assets/CV_Template/CV_7.png",
-    "/assets/CV_Template/CV_8.png",
-    "/assets/CV_Template/CV_9.png"
-    
-  ];
-  currentIndex_cv_carousel = 3; // L'indice dell'immagine centrale iniziale
-
+  
   scrollLeft() {
     if (this.currentIndex_cv_carousel > 2) {
       this.currentIndex_cv_carousel--;
@@ -83,7 +84,7 @@ export class AppComponent {
   scrollRight() {
     if (this.currentIndex_cv_carousel < this.template_cv.length - 3) {
       this.currentIndex_cv_carousel++;
-      this.templateScelto = this.template_cv[this.currentIndex_cv_carousel].slice(0, -4);
+      this.templateScelto = this.template_cv[this.currentIndex_cv_carousel].slice(8, -4);
     }
   }
 
