@@ -12,7 +12,7 @@ import axios from 'axios';
 export class AppComponent implements AfterViewInit {
   title = 'matchup';
   uploadedFile: File | null = null;
-  responseFile: File | null = null;
+  responseFile: Blob | null = null;
   loading = false;
 
   template_cv = [
@@ -62,7 +62,8 @@ export class AppComponent implements AfterViewInit {
         const response = await axios.post('http://localhost:5100/upload', formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
-          }
+          },
+          responseType: 'blob' // Assicurati che la risposta sia di tipo blob
         });
         console.log('Success:', response.data);
         this.responseFile = response.data;
@@ -80,13 +81,12 @@ export class AppComponent implements AfterViewInit {
 
   downloadFile() {
     if (this.responseFile) {
-      const blob = new Blob([this.responseFile], { type: this.responseFile.type });
-      const url = window.URL.createObjectURL(blob);
+      const url = window.URL.createObjectURL(this.responseFile);
 
       // Creare un link temporaneo e simularne il clic per avviare il download
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'Output.docx';
+      link.download = 'CV_Impaginato.docx'; // Imposta il nome del file come desiderato
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
